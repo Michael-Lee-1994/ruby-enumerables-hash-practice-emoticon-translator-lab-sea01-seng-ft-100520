@@ -11,23 +11,23 @@ def load_library(file_path)
     emoji_hash[key][:english]
     emoji_hash[key][:japanese]
   end
-  new_hash
+  emoji_hash
 end
 
-def get_japanese_emoticon(file_path, emoticon)
+def get_japanese_emoticon(file_path, emoji)
   # code goes here
   library = load_library(file_path)
-  emoticon = library.keys.find do |key|
-    library[key][:english] == emoticon
+  emoji = library.keys.find do |key|
+    library[key][:english] == emoji
   end
-  emoticon ? library[emoticon][:japanese] : "Sorry, that emoticon was not found"
+  emoji ? library[emoji][:japanese] : "Sorry, that emoji was not found"
 end
 
-def get_english_meaning(file_path, emoticon)
+def get_english_meaning(file_path, emoji)
   # code goes here
   library = load_library(file_path)
-  emoticon = library.keys.find do |key|
-    library[key][:japanese] == emoticon
+  emoji = library.keys.find do |key|
+    library[key][:japanese] == emoji
   end
-  emoticon ? emoticon : "Sorry, that emoticon was not found"
+  emoji ? emoji : "Sorry, that emoji was not found"
 end
