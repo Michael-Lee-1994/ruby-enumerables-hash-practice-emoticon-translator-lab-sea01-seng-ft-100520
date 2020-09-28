@@ -8,8 +8,8 @@ def load_library(file_path)
 
   emoticons.each do |key,value|
     emoji_hash[key] = {}
-    emoji_hash[key][:english] = value[0]
     emoji_hash[key][:japanese] = value[1]
+    emoji_hash[key][:english] = value[0]
   end
   emoji_hash
 end
